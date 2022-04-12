@@ -20,6 +20,8 @@
 #include "graphics/ga_cube_component.h"
 #include "graphics/ga_program.h"
 
+#include "audio/ga_audio_component.h"
+
 #include "gui/ga_font.h"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -62,6 +64,7 @@ int main(int argc, const char** argv)
 	lua.translate({ 0.0f, 2.0f, 1.0f });
 	ga_lua_component lua_move(&lua, "data/scripts/move.lua");
 	ga_cube_component lua_model(&lua, "data/textures/rpi.png");
+	ga_audio_component lua_audio(&lua);
 	sim->add_entity(&lua);
 
 	// Main loop:
