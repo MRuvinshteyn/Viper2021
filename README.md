@@ -18,8 +18,12 @@ For All Configurations:
 
 For Debug:
   * Linker > Input > Add `fmodL_vc.lib` to Additional Dependencies
-  * Build Events > Post-Build Event > Add `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\fmod\lib\x64\fmodL.dll" "$(OutDir)"` to Command Line
+  * Build Events > Post-Build Event > Add the following two lines to Command Line:
+  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\fmod\lib\x64\fmodL.dll" "$(OutDir)"`
+  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\data\sounds\*" "$(OutDir)\data\sounds\"`
 
 For Release:
   * Linker > Input > Add `fmod_vc.lib` to Additional Dependencies
-  * Build Events > Post-Build Event > Add `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\fmod\lib\x64\fmod.dll" "$(OutDir)"` to Command Line
+  * Build Events > Post-Build Event > Add the following two lines to Command Line:
+  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\fmod\lib\x64\fmod.dll" "$(OutDir)"`
+  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\data\sounds\*" "$(OutDir)\data\sounds\"`
