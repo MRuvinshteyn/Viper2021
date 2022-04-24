@@ -18,14 +18,14 @@ For All Configurations:
 
 For Debug:
   * Linker > Input > Add `fmodL_vc.lib` to Additional Dependencies
-  * Build Events > Post-Build Event > Add the following three lines to Command Line:
-  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\fmod\lib\x64\fmodL.dll" "$(OutDir)"`
-  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\data\sounds\*" "$(OutDir)\data\sounds\"`
+  * Build Events > Post-Build Event > Add the following three lines to Command Line:<br>
+  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\fmod\lib\x64\fmodL.dll" "$(OutDir)"`<br>
+  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\data\sounds\*" "$(OutDir)\data\sounds\"`<br>
   `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\data\textures\speaker.png" "$(OutDir)\data\textures\"`
 
 For Release:
   * Linker > Input > Add `fmod_vc.lib` to Additional Dependencies
-  * Build Events > Post-Build Event > Add the following three lines to Command Line:
-  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\fmod\lib\x64\fmod.dll" "$(OutDir)"`
-  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\data\sounds\*" "$(OutDir)\data\sounds\"`
+  * Build Events > Post-Build Event > Add the following three lines to Command Line:<br>
+  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\fmod\lib\x64\fmod.dll" "$(OutDir)"`<br>
+  `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\data\sounds\*" "$(OutDir)\data\sounds\"`<br>
   `xcopy /y "$(SolutionDir)\..\..\src\ga1-core\data\textures\speaker.png" "$(OutDir)\data\textures\"`
