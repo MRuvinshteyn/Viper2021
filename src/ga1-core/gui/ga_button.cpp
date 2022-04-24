@@ -12,10 +12,19 @@
 
 #include "framework/ga_frame_params.h"
 
-ga_button::ga_button(const char* text, float x, float y, ga_frame_params* params)
+ga_button::ga_button(const char* text, float x, float y, ga_frame_params* params, bool alt_font)
 {
 	extern ga_font* g_font;
-	g_font->print(params, text, x, y, k_text_color, &_min, &_max);
+	extern ga_font* g_font_alt;
+
+	if (!alt_font)
+	{
+		g_font->print(params, text, x, y, k_text_color, &_min, &_max);
+	}
+	else
+	{
+		g_font_alt->print(params, text, x, y, k_text_color, &_min, &_max);
+	}
 
 	if (get_hover(params))
 	{
@@ -29,7 +38,14 @@ ga_button::ga_button(const char* text, float x, float y, ga_frame_params* params
 	if (get_pressed(params))
 	{
 		draw_fill(params, _min, _max, k_button_press_color);
-		g_font->print(params, text, x, y, k_text_color);
+		if (!alt_font)
+		{
+			g_font->print(params, text, x, y, k_text_color);
+		}
+		else
+		{
+			g_font_alt->print(params, text, x, y, k_text_color);
+		}
 	}
 }
 

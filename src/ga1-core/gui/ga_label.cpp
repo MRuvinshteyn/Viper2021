@@ -12,10 +12,18 @@
 
 #include "framework/ga_frame_params.h"
 
-ga_label::ga_label(const char* text, float x, float y, ga_frame_params* params)
+ga_label::ga_label(const char* text, float x, float y, ga_frame_params* params, bool alt_font)
 {
 	extern ga_font* g_font;
-	g_font->print(params, text, x, y, k_text_color);
+	extern ga_font* g_font_alt;
+	if (!alt_font)
+	{
+		g_font->print(params, text, x, y, k_text_color);
+	}
+	else
+	{
+		g_font_alt->print(params, text, x, y, k_text_color);
+	}
 }
 
 ga_label::~ga_label()

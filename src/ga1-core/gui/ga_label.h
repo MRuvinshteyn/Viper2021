@@ -17,6 +17,6 @@
 class ga_label : public ga_widget
 {
 public:
-	ga_label(const char* text, float x, float y, struct ga_frame_params* params);
+	ga_label(const char* text, float x, float y, struct ga_frame_params* params, bool alt_font=false);
 	~ga_label();
 };

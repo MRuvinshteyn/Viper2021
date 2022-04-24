@@ -17,7 +17,7 @@ const ga_vec3f ga_widget::k_button_hover_color = { 0.75f, 0.75f, 1.0f };
 const ga_vec3f ga_widget::k_button_press_color = { 0.25f, 0.25f, 1.0f };
 const ga_vec3f ga_widget::k_text_color = { 1.0f, 1.0f, 1.0f };
 const float ga_widget::k_button_offset = 4.0f;
-const float ga_widget::k_checkbox_offset = 15.0f;
+const float ga_widget::k_checkbox_offset = 64.0f;
 
 void ga_widget::draw_outline(ga_frame_params* params, const ga_vec2f& min, const ga_vec2f& max, const ga_vec3f& color, float offset)
 {

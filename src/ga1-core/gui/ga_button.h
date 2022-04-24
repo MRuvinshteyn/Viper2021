@@ -19,7 +19,7 @@
 class ga_button : public ga_widget
 {
 public:
-	ga_button(const char* text, float x, float y, struct ga_frame_params* params);
+	ga_button(const char* text, float x, float y, struct ga_frame_params* params, bool alt_font=false);
 	~ga_button();
 
 	bool get_hover(const struct ga_frame_params* params) const;
