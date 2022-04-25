@@ -105,6 +105,8 @@ public:
 	*   - Pan
 	*   - Return
 	*   - Send
+	* 
+	* Descriptions taken from https://www.fmod.com/resources/documentation-api?version=2.02&page=effects-reference.html
 	*/
 
 	/// <summary>
