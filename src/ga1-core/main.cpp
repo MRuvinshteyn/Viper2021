@@ -65,24 +65,23 @@ int main(int argc, const char** argv)
 	camera->rotate(rotation);
 
 	// Create an entity whose movement is driven by Lua script.
-	ga_entity lua;
-	lua.translate({ 0.0f, 2.0f, 1.0f });
-	ga_lua_component lua_move(&lua, "data/scripts/move.lua");
-	ga_cube_component lua_model(&lua, "data/textures/speaker.png");
+	ga_entity demo;
+	demo.translate({ 0.0f, 2.0f, 1.0f });
+	ga_cube_component demo_model(&demo, "data/textures/speaker.png");
 
 	// create audio component
-	ga_audio_component lua_audio(&lua);
+	ga_audio_component demo_audio(&demo);
 
 	// add the note to be used by the piano
 #ifdef _DEBUG
-	lua_audio.add_sound("Debug/data/sounds/c4.wav");
-	lua_audio.add_sound("Debug/data/sounds/guitar_c4.wav");
+	demo_audio.add_sound("Debug/data/sounds/c4.wav");
+	demo_audio.add_sound("Debug/data/sounds/guitar_c4.wav");
 #else
 	lua_audio.add_sound("Release/data/sounds/c4.wav");
 	lua_audio.add_sound("Release/data/sounds/guitar_c4.wav");
 #endif
 		
-	sim->add_entity(&lua);
+	sim->add_entity(&demo);
 
 	// Main loop:
 	while (true)
@@ -103,7 +102,7 @@ int main(int argc, const char** argv)
 		sim->update(&params);
 
 		// create GUI for audio component
-		setup_piano(&params, &lua_audio);
+		setup_piano(&params, &demo_audio);
 
 		// Perform the late update.
 		sim->late_update(&params);
