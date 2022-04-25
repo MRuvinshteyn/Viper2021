@@ -8,6 +8,8 @@ Note: MinGW-w64 build is supported, but not recommended.
 Recommended download location is: https://mingw-w64.org/doku.php/download/mingw-builds
 The mingw bin folder must be in your PATH variable before running setup-mingw.bat.
 
+Note: Documentation for audio component is located in `src\ga1-core\audio\html\classga__audio__component.html`
+
 # Linking Dependencies
 
 Right-click on the `ga` solution and select Properties
